@@ -43,15 +43,50 @@ body {
         left: 50%;
         transition: all 0.05s cubic-bezier(0.68, 0.55, 0.265, 1.55);
         transform-origin: 0%;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            right: rem(-10); /* кінець стрілки */
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: rem(15) solid transparent;
+            border-bottom: rem(15) solid transparent;
+        }
     }
 }
 .hour {
-    width: 35%;
+    width: 25%;
+    background-color: #5f2c2d;
+    &::after{
+            border-left: rem(20) solid #5f2c2d;
+    }
+
 }
 .min { 
-    width: 45%;
+    width: 35%;
+    background-color: #914446;
+    &::after{
+        border-left: rem(20) solid #914446;
+    }
 }
 .second {
-    width: 50%;
+    width: 45%;
+    &::before {
+        content: '';
+        position: absolute;
+        width: rem(32);
+        height: rem(32);
+        background-color: $color-face;
+        border-radius: 50%;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) translateX(-50%);
+    }
+    &::after{
+        border-left: rem(20) solid $color-hand;
+    }
 }
 

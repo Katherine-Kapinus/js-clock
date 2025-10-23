@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -114,15 +115,48 @@ body {
   transition: all 0.05s cubic-bezier(0.68, 0.55, 0.265, 1.55);
   transform-origin: 0%;
 }
+.clock__hand::after {
+  content: "";
+  position: absolute;
+  right: -0.625rem; /* кінець стрілки */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 0.9375rem solid transparent;
+  border-bottom: 0.9375rem solid transparent;
+}
 
 .hour {
-  width: 35%;
+  width: 25%;
+  background-color: #5f2c2d;
+}
+.hour::after {
+  border-left: 1.25rem solid #5f2c2d;
 }
 
 .min {
-  width: 45%;
+  width: 35%;
+  background-color: #914446;
+}
+.min::after {
+  border-left: 1.25rem solid #914446;
 }
 
 .second {
-  width: 50%;
+  width: 45%;
+}
+.second::before {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: #84994F;
+  border-radius: 50%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) translateX(-50%);
+}
+.second::after {
+  border-left: 1.25rem solid #B45253;
 }
