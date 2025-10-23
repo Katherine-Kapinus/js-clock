@@ -37,21 +37,21 @@ body {
 
     &__hand {
         position: absolute;
-        width: rem(8);
+        height: rem(8);
         background-color: $color-hand;
-        left: 50%;
         bottom: 50%;
-        // transform: translateX(-4px);
-        transform-origin: 50% 100%;
+        left: 50%;
+        transition: all 0.05s cubic-bezier(0.68, 0.55, 0.265, 1.55);
+        transform-origin: 0%;
     }
 }
 .hour {
-    height: 35%;
+    width: 35%;
 }
 .min { 
-    height: 45%;
+    width: 45%;
 }
 .second {
-    height: 50%;
+    width: 50%;
 }
 
